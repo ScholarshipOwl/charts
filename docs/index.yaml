@@ -1,0 +1,24 @@
+apiVersion: v1
+entries:
+  helloworld:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2020-06-19T16:52:27.521756251+03:00"
+    description: A Helm chart for Kubernetes
+    digest: 21776af9fe15652e1a5f06d622c7acbfe431cf3ab0aa27252d43163cc42ff0f9
+    name: helloworld
+    type: application
+    urls:
+    - https://scholarshipowl.github.io/charts/helloworld-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2020-06-19T16:52:27.521233141+03:00"
+    description: A Helm chart for Kubernetes
+    digest: 7f42b225f2e63bd4c6b584e273bf4a6497b8dc1faa9117fe119d428fb9475ff2
+    name: helloworld
+    type: application
+    urls:
+    - https://scholarshipowl.github.io/charts/helloworld-0.1.0.tgz
+    version: 0.1.0
+generated: "2020-06-19T16:52:27.519841817+03:00"
