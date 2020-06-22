@@ -23,8 +23,8 @@ The following table is the configurations for Mautic deployment.
  
 | Parameter                 | Description                                     | Default                                                 |
 |---------------------------|-------------------------------------------------|---------------------------------------------------------|
-| `nameOverride`            | String to partially override wordpress.fullname | `nil`                                                   |
-| `fullnameOverride`        | String to fully override wordpress.fullname     | `nil`                                                   |
+| `nameOverride`            | String to partially override mautic.fullname | `nil`                                                   |
+| `fullnameOverride`        | String to fully override mautic.fullname     | `nil`                                                   |
 | `clusterDomain`           | Default Kubernetes cluster domain               | `cluster.local`                                         |
 
 ### Mautic parameters
@@ -45,11 +45,22 @@ The following table is the configurations for Mautic deployment.
 | `tolerations`               | Tolerations for pod assignment           | `[]`                |
 | `affinity`                  | Affinity for pod assignment              | `{}`                |
 | `replicaCount`              | Number of Mautic Pods to run             | `1`                 |
+| `runCronJobs`               | Run cron jobs in the image               | `true`              |
+| `trustedProxies`            | Provide trusted proxies IPs              | `0.0.0.0/0`         |
+
+### Database parameters
+
+| Parameter                   | Description                              | Default             |
+|-----------------------------|------------------------------------------|---------------------|
+| `database.host`             | Mautic MAUTIC_DB_HOST                    | `localhost`         |
+| `database.name`             | Mautic MAUTIC_DB_NAME                    | `mautic`            |
+| `database.user`             | Mautic MAUTIC_DB_USER                    | `root`              |
+| `database.password`         | Mautic MAUTIC_DB_PASSWORD                | `secret`            |
 
 ### Ingress parameters
 
 | Parameter                         | Description                                              | Default                        |
 |-----------------------------------|----------------------------------------------------------|--------------------------------|
 | `ingress.enabled`                 | Enable ingress controller resource                       | `false`                        |
-| `ingress.hostname`                | Default host for the ingress resource                    | `wordpress.local`              |
+| `ingress.hostname`                | Default host for the ingress resource                    | `mautic.local`              |
 | `ingress.annotations`             | Ingress annotations                                      | `[]` (evaluated as a template) |

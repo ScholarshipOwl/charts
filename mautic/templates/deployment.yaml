@@ -26,19 +26,19 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
             - name: MAUTIC_URL
-              value: https://{{ .Values.ingress.hostname }}
+              value: "https://{{ .Values.ingress.hostname }}"
             - name: MAUTIC_DB_HOST
-              value: {{ .Values.database.host }}
+              value: {{ .Values.database.host | quote }}
             - name: MAUTIC_DB_NAME 
-              value: {{ .Values.database.name }}
+              value: {{ .Values.database.name | quote }}
             - name: MAUTIC_DB_USER 
-              value: {{ .Values.database.user }}
+              value: {{ .Values.database.user | quote }}
             - name: MAUTIC_DB_PASSWORD
-              value: {{ .Values.database.password }}
+              value: {{ .Values.database.password | quote }}
             - name: MAUTIC_RUN_CRON_JOBS
-              value: {{ .Values.database.runCronJobs }}
+              value: {{ .Values.runCronJobs | quote }}
             - name: MAUTIC_TRUSTED_PROXIES
-              value: {{ .Values.database.trustedProxies }}
+              value: {{ .Values.trustedProxies | quote }}
           ports:
             - name: http
               containerPort: 80
@@ -51,7 +51,7 @@ spec:
               port: http
           volumeMounts:
             - name: mautic-data
-              mountPath: /var/www/htm
+              mountPath: /var/www/html
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           securityContext:
