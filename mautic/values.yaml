@@ -14,7 +14,7 @@ nameOverride: ""
 fullnameOverride: ""
 
 runCronJobs: "true"
-trustedProxies: "0.0.0.0/0"
+trustedProxies: '["0.0.0.0/0"]'
 
 service:
   type: ClusterIP
@@ -99,5 +99,6 @@ volumeMounts:
     name: mautic-data
     subPath: config
   
-cacheClear:
-  enabled: false
+jobs:
+  cacheClear:
+    enabled: false

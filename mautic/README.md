@@ -46,7 +46,8 @@ The following table is the configurations for Mautic deployment.
 | `affinity`                  | Affinity for pod assignment              | `{}`                |
 | `replicaCount`              | Number of Mautic Pods to run             | `1`                 |
 | `runCronJobs`               | Run cron jobs in the image               | `true`              |
-| `trustedProxies`            | Provide trusted proxies IPs              | `0.0.0.0/0`         |
+| `trustedProxies`            | Provide trusted proxies IPs              | `["0.0.0.0/0"]`     |
+| `jobs.cacheClear.enabled`   | Clear cache on upgrade                   | `false`             |
 
 ### Database parameters
 
@@ -62,5 +63,5 @@ The following table is the configurations for Mautic deployment.
 | Parameter                         | Description                                              | Default                        |
 |-----------------------------------|----------------------------------------------------------|--------------------------------|
 | `ingress.enabled`                 | Enable ingress controller resource                       | `false`                        |
-| `ingress.hostname`                | Default host for the ingress resource                    | `mautic.local`              |
+| `ingress.hostname`                | Default host for the ingress resource                    | `mautic.local`                 |
 | `ingress.annotations`             | Ingress annotations                                      | `[]` (evaluated as a template) |
