@@ -37,8 +37,6 @@ spec:
               value: {{ .Values.database.password | quote }}
             - name: MAUTIC_RUN_CRON_JOBS
               value: {{ .Values.runCronJobs | quote }}
-            - name: MAUTIC_TRUSTED_PROXIES
-              value: {{ .Values.trustedProxies | quote }}
           ports:
             - name: http
               containerPort: 80
@@ -50,20 +48,16 @@ spec:
             tcpSocket:
               port: http
           volumeMounts:
-            - name: mautic-data
-              mountPath: /var/www/html
+           {{- toYaml .Values.volumeMounts | nindent 12 }}            
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
+            
       volumes:
         - name: mautic-data
-          {{- if .Values.persistence.enabled }}
           persistentVolumeClaim:
-            claimName: {{ .Values.persistence.existingClaim | default (include "mautic.fullname" .) }}
-          {{- else }}
-          emptyDir: {}
-          {{ end }}
+            claimName: {{ include "mautic.fullname" . }}
 
       {{- with .Values.nodeSelector }}
       nodeSelector:
