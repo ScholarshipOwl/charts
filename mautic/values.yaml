@@ -7,14 +7,14 @@ replicaCount: 1
 image:
   pullPolicy: IfNotPresent
   repository: mautic/mautic
-  tag: latest
+  tag: v3
 
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
 runCronJobs: "true"
-trustedProxies: "0.0.0.0/0"
+trustedProxies: '["0.0.0.0/0"]'
 
 service:
   type: ClusterIP
@@ -81,3 +81,24 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+volumeMounts:
+  - mountPath: /var/www/html/var/cache
+    name: mautic-data
+    subPath: cache
+  - mountPath: /var/www/html/var/logs
+    name: mautic-data
+    subPath: logs
+  - mountPath: /var/www/html/var/spool
+    name: mautic-data
+    subPath: spool      
+  - mountPath: /var/www/html/media
+    name: mautic-data
+    subPath: media
+  - mountPath: /var/www/html/app/config
+    name: mautic-data
+    subPath: config
+  
+jobs:
+  cacheClear:
+    enabled: false

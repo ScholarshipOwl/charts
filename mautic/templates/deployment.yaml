@@ -50,12 +50,11 @@ spec:
             tcpSocket:
               port: http
           volumeMounts:
-            - name: mautic-data
-              mountPath: /var/www/html
+           {{- toYaml .Values.volumeMounts | nindent 12 }}            
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           securityContext:
-            {{- toYaml .Values.securityContext | nindent 12 }}
+            {{- toYaml .Values.securityContext | nindent 12 }}           
       volumes:
         - name: mautic-data
           {{- if .Values.persistence.enabled }}
