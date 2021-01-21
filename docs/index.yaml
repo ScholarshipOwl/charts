@@ -3,7 +3,7 @@ entries:
   helloworld:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-06-23T21:06:58.413341571+03:00"
+    created: "2021-01-21T19:20:10.579911711+02:00"
     description: A Helm chart for Kubernetes
     digest: 21776af9fe15652e1a5f06d622c7acbfe431cf3ab0aa27252d43163cc42ff0f9
     name: helloworld
@@ -13,7 +13,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-06-23T21:06:58.412596501+03:00"
+    created: "2021-01-21T19:20:10.579535751+02:00"
     description: A Helm chart for Kubernetes
     digest: 7f42b225f2e63bd4c6b584e273bf4a6497b8dc1faa9117fe119d428fb9475ff2
     name: helloworld
@@ -23,8 +23,18 @@ entries:
     version: 0.1.0
   mautic:
   - apiVersion: v2
+    appVersion: 3.0.2
+    created: "2021-01-21T19:20:10.580880724+02:00"
+    description: A Helm chart for Kubernetes
+    digest: a3e00b3b4431789f931b3a22f635e26fb019039e0b551743d1c524d6da015b3f
+    name: mautic
+    type: application
+    urls:
+    - https://scholarshipowl.github.io/charts/mautic-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-06-23T21:06:58.414018883+03:00"
+    created: "2021-01-21T19:20:10.58032387+02:00"
     description: A Helm chart for Kubernetes
     digest: 3203fe5be22466e0a3bb8bc0d719162b87e2e7e773502bea3aef901b1d34af4e
     name: mautic
@@ -32,4 +42,4 @@ entries:
     urls:
     - https://scholarshipowl.github.io/charts/mautic-0.1.0.tgz
     version: 0.1.0
-generated: "2020-06-23T21:06:58.410850131+03:00"
+generated: "2021-01-21T19:20:10.579048781+02:00"
