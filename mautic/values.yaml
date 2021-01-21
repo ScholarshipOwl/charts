@@ -19,6 +19,7 @@ trustedProxies: '["0.0.0.0/0"]'
 service:
   type: ClusterIP
   port: 80
+  annotations: {}
 
 ingress:
   enabled: false
@@ -31,7 +32,7 @@ database:
   host: "localhost"
   name: "mautic"
   user: "root"
-  password: "secret"
+  # password: "secret"  
 
 ## Enable persistence using Persistent Volume Claims
 ## ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
@@ -102,3 +103,6 @@ volumeMounts:
 jobs:
   cacheClear:
     enabled: false
+
+deploymentTemplate:
+  annotations: {}

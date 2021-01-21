@@ -4,6 +4,10 @@ metadata:
   name: {{ include "mautic.fullname" . }}
   labels:
     {{- include "mautic.labels" . | nindent 4 }}
+  {{- with .Values.service.annotations }}
+  annotations:
+    {{ tpl (toYaml .) $ | trim | nindent 4 }}
+  {{- end }}
 spec:
   type: {{ .Values.service.type }}
   ports:
