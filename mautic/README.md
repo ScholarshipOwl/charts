@@ -56,7 +56,7 @@ The following table is the configurations for Mautic deployment.
 | `database.host`             | Mautic MAUTIC_DB_HOST                    | `localhost`         |
 | `database.name`             | Mautic MAUTIC_DB_NAME                    | `mautic`            |
 | `database.user`             | Mautic MAUTIC_DB_USER                    | `root`              |
-| `database.password`         | Mautic MAUTIC_DB_PASSWORD                | `secret`            |
+|  generate on install        | Mautic MAUTIC_DB_PASSWORD                | `randAlpha 12`      |
 
 ### Ingress parameters
 

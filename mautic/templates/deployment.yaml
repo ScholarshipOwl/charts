@@ -2,6 +2,10 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ include "mautic.fullname" . }}
+  {{- with .Values.deploymentTemplate.annotations }}
+  annotations:
+    {{ toYaml . | nindent 4 }}
+  {{- end }}
   labels:
     {{- include "mautic.labels" . | nindent 4 }}
 spec:
@@ -11,6 +15,10 @@ spec:
       {{- include "mautic.selectorLabels" . | nindent 6 }}
   template:
     metadata:
+      {{- with .Values.deploymentTemplate.annotations }}
+      annotations:
+        {{ toYaml . | nindent 8 }}
+      {{- end }}
       labels:
         {{- include "mautic.selectorLabels" . | nindent 8 }}
     spec:
@@ -34,7 +42,14 @@ spec:
             - name: MAUTIC_DB_USER 
               value: {{ .Values.database.user | quote }}
             - name: MAUTIC_DB_PASSWORD
+              {{- if .Values.database.password }}
               value: {{ .Values.database.password | quote }}
+              {{ else }}
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "mautic.fullname" . }}
+                  key: dbPassword
+              {{ end }}    
             - name: MAUTIC_RUN_CRON_JOBS
               value: {{ .Values.runCronJobs | quote }}
             - name: MAUTIC_TRUSTED_PROXIES
