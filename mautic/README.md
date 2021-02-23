@@ -47,7 +47,6 @@ The following table is the configurations for Mautic deployment.
 | `replicaCount`              | Number of Mautic Pods to run             | `1`                 |
 | `runCronJobs`               | Run cron jobs in the image               | `true`              |
 | `trustedProxies`            | Provide trusted proxies IPs              | `["0.0.0.0/0"]`     |
-| `jobs.cacheClear.enabled`   | Clear cache on upgrade                   | `false`             |
 
 ### Database parameters
 

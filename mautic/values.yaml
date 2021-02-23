@@ -97,9 +97,5 @@ volumeMounts:
     name: mautic-data
     subPath: config
   
-jobs:
-  cacheClear:
-    enabled: false
-
 deploymentTemplate:
   annotations: {}
