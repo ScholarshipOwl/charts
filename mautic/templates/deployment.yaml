@@ -54,6 +54,10 @@ spec:
               value: {{ .Values.runCronJobs | quote }}
             - name: MAUTIC_TRUSTED_PROXIES
               value: {{ .Values.trustedProxies | quote }}
+          lifecycle:
+            postStart:
+              exec:            
+                command: ["/bin/sh", "-c", "sudo -u www-data php /var/www/html/bin/console cache:warmup"]
           ports:
             - name: http
               containerPort: 80

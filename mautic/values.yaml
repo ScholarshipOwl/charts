@@ -23,7 +23,7 @@ service:
 
 ingress:
   enabled: false
-  host: 'mautic.local'
+  hostname: 'mautic.local'
   annotations: {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
@@ -84,9 +84,6 @@ tolerations: []
 affinity: {}
 
 volumeMounts:
-  - mountPath: /var/www/html/var/cache
-    name: mautic-data
-    subPath: cache
   - mountPath: /var/www/html/var/logs
     name: mautic-data
     subPath: logs
