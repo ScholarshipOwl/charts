@@ -1,2 +1,2 @@
 1. Get the application URL by running these commands:
-  https://{{ .Values.ingress.host }}
+  https://{{ .Values.ingress.hostname }}

@@ -56,8 +56,8 @@ spec:
               value: {{ .Values.trustedProxies | quote }}
           lifecycle:
             postStart:
-              exec:            
-                command: ["/bin/sh", "-c", "sudo -u www-data php /var/www/html/bin/console cache:warmup"]
+              exec:
+                command: ["/bin/sh", "-c", "until pgrep apache2; do sleep 1; done && sudo -u www-data php /var/www/html/bin/console cache:warmup"]
           ports:
             - name: http
               containerPort: 80
