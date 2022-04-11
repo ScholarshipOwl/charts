@@ -1,9 +1,20 @@
 apiVersion: v1
 entries:
+  dind:
+  - apiVersion: v2
+    appVersion: 20.10.14
+    created: "2022-04-12T11:04:39.16388682+03:00"
+    description: A Helm chart for Kubernetes
+    digest: e1de74f65a99444c67c128fe210f2fe24ce3dffb4b141770bdbd6ca86ecaa05e
+    name: dind
+    type: application
+    urls:
+    - https://scholarshipowl.github.io/charts/dind-0.1.0.tgz
+    version: 0.1.0
   helloworld:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-02-23T20:35:37.418351207+02:00"
+    created: "2022-04-12T11:04:39.164441677+03:00"
     description: A Helm chart for Kubernetes
     digest: 21776af9fe15652e1a5f06d622c7acbfe431cf3ab0aa27252d43163cc42ff0f9
     name: helloworld
@@ -13,7 +24,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-02-23T20:35:37.417977294+02:00"
+    created: "2022-04-12T11:04:39.164175153+03:00"
     description: A Helm chart for Kubernetes
     digest: 7f42b225f2e63bd4c6b584e273bf4a6497b8dc1faa9117fe119d428fb9475ff2
     name: helloworld
@@ -24,7 +35,7 @@ entries:
   mautic:
   - apiVersion: v2
     appVersion: 3.2.5
-    created: "2021-02-23T20:35:37.419889+02:00"
+    created: "2022-04-12T11:04:39.1655367+03:00"
     description: A Helm chart for Kubernetes
     digest: c3f5760257e9e8ba70919882b1d1086b8797fd4b33422b088a677871a7552e7a
     name: mautic
@@ -34,7 +45,7 @@ entries:
     version: 0.2.1
   - apiVersion: v2
     appVersion: 3.0.2
-    created: "2021-02-23T20:35:37.419512284+02:00"
+    created: "2022-04-12T11:04:39.165159757+03:00"
     description: A Helm chart for Kubernetes
     digest: a3e00b3b4431789f931b3a22f635e26fb019039e0b551743d1c524d6da015b3f
     name: mautic
@@ -44,7 +55,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-02-23T20:35:37.418829784+02:00"
+    created: "2022-04-12T11:04:39.164759914+03:00"
     description: A Helm chart for Kubernetes
     digest: 3203fe5be22466e0a3bb8bc0d719162b87e2e7e773502bea3aef901b1d34af4e
     name: mautic
@@ -52,4 +63,4 @@ entries:
     urls:
     - https://scholarshipowl.github.io/charts/mautic-0.1.0.tgz
     version: 0.1.0
-generated: "2021-02-23T20:35:37.417411918+02:00"
+generated: "2022-04-12T11:04:39.163489233+03:00"

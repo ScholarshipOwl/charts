@@ -1,0 +1,12 @@
+DinD service deployed to your cluster.
+
+Use "{{ include "dind.address" . }}" inside your cluster.
+
+Run next command to test the deployment:
+
+kubectl run dind-test --rm -it \
+    --image docker \
+    --restart=Never \
+    --namespace {{ .Release.Namespace }}  \
+    --env "DOCKER_HOST={{ include "dind.address" . }}" \
+    -- docker info

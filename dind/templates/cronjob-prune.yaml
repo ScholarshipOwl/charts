@@ -1,0 +1,26 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: {{ include "dind.fullname" . }}-cronjob-prune
+  labels:
+    {{- include "dind.labels" . | nindent 4 }}
+spec:
+  ## Run daily at night
+  schedule: "15 1 * * *"
+  concurrencyPolicy: Forbid
+  jobTemplate:
+    spec:
+      backoffLimit: 3
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+            - name: job
+              image: "{{ .Values.image.repository }}:{{ .Values.image.tag  }}"
+              imagePullPolicy: {{ .Values.image.pullPolicy }}
+              command: ["docker", "image", "prune", "--force"]
+              env:
+                - name: DOCKER_TLS_CERTDIR
+                  value: ""
+                - name: DOCKER_HOST
+                  value: {{ include "dind.address" . }}
