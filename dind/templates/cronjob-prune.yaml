@@ -6,7 +6,7 @@ metadata:
     {{- include "dind.labels" . | nindent 4 }}
 spec:
   ## Run daily at night
-  schedule: "15 1 * * *"
+  schedule: {{ .Values.jobs.prune.schedule | quote }}
   concurrencyPolicy: Forbid
   jobTemplate:
     spec:
@@ -18,7 +18,9 @@ spec:
             - name: job
               image: "{{ .Values.image.repository }}:{{ .Values.image.tag  }}"
               imagePullPolicy: {{ .Values.image.pullPolicy }}
-              command: ["docker", "image", "prune", "--force"]
+              ## command: ["docker", "image", "prune", "--force"]
+              command:
+                 {{- toYaml .Values.jobs.prune.command | nindent 16 }}
               env:
                 - name: DOCKER_TLS_CERTDIR
                   value: ""
