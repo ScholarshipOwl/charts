@@ -24,4 +24,5 @@ spec:
                 name: {{ include "mautic.fullname" . }}
                 port:
                   number: {{ .Values.service.port }}
+            pathType: Prefix
 {{- end }}
