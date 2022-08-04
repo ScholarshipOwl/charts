@@ -79,4 +79,4 @@ affinity: {}
 jobs:
   prune:
     schedule: "15 1 * * *"
-    command: ["docker", "image", "prune", "--force"]
+    command: ["docker", "image", "prune", "-a", "--force", "--filter", "until=744h"]
