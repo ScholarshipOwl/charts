@@ -39,7 +39,7 @@ The following table is the configurations for Mautic deployment.
 |-----------------------------|------------------------------------------|---------------------|
 | `image.repository`          | DinD docker image repository             | `docker`            |
 | `image.pullPolicy`          | DinD image pull policy                   | `IfNotPresent`      |
-| `image.tag`                 | Mautic image tag                         | `20.10.14-dind`     |
+| `image.tag`                 | Mautic image tag                         | `20.10.15-dind`     |
 | `service.type`              | Kubernetes Service type                  | `ClusterIP`         |
 | `service.port`              | Service port                             | `2375`              |
 | `persistence.enabled`       | Enable persistence using PVC             | `true`              |
