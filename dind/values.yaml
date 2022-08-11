@@ -79,4 +79,4 @@ affinity: {}
 jobs:
   prune:
     schedule: "15 1 * * *" # *-minutes *-hour *-day *-month *-week day - (0-7) (where 0 or 7 is Sunday )
-    command: ["docker", "image", "prune", "-a", "--force", "--filter", "until=744h"] # 744 hours is 31 days
+    command: ["docker", "image", "prune", "-a", "--force", "--filter", "until=744h"] # 744 hours is 31 days.
