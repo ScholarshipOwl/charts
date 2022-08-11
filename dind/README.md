@@ -15,7 +15,7 @@ helm install dind sowl/dind
 ```
 
 ## Introduction
-This chart bootstraps a [Docker in Docker](https://hub.docker.com/_/docker) deployment on a [Kubernetes](http://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager.
+This chart bootstraps a [Docker in Docker](https://hub.docker.com/_/docker) deployment on a [Kubernetes](http://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager..
 
 ## Prerequisites
 
