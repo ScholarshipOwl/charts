@@ -5,7 +5,7 @@
 image:
   repository: docker
   pullPolicy: IfNotPresent
-  tag: 20.10.14-dind
+  tag: 20.10.15-dind
 
 imagePullSecrets: []
 nameOverride: ""
@@ -78,5 +78,5 @@ affinity: {}
 
 jobs:
   prune:
-    schedule: "15 1 * * *"
-    command: ["docker", "image", "prune", "-a", "--force", "--filter", "until=744h"]
+    schedule: "15 1 * * *" # *-minutes *-hour *-day *-month *-week day - (0-7) (where 0 or 7 is Sunday )
+    command: ["docker", "image", "prune", "-a", "--force", "--filter", "until=744h"] # 744 hours is 31 days
